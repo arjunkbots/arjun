@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arjun Kumar</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      margin: 0;
+      padding: 20px;
+      color: #2e3c43;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-left: 6px solid #1a73e8;
+    }
+
+    h1, h2 {
+      color: #0d47a1;
+    }
+    
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+
+    .highlight {
+      color: #1a73e8;
+      font-weight: bold;
+    }
+
+    .contact {
+      margin-top: 30px;
+      font-size: 1em;
+    }
+
+    .contact a {
+      color: #0d47a1;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .gallery {
+      margin-top: 40px;
+    }
+
+    .gallery h2 {
+      font-size: 1.8em;
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+
+    .resume h2 {
+      font-size: 1.8em;
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const images = document.querySelectorAll(".gallery-grid img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      images.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.style.display = "flex";
+        });
+      });
+
+      lightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello, I'm <span class="highlight">Arjun Kumar</span></h1>
+    <p>
+      I'm a <span class="highlight">junior in high school</span> with a passion for <span class="highlight">Mechanical</span> and <span class="highlight">Computer engineering</span>. I enjoy building things from the ground up—whether it’s coding a new app, designing electronic circuits, or tinkering with robotics projects.
+    </p>
+    <p>
+      Currently, I’m working on a project involving the <span class="highlight">Raspberry Pi and machine vision</span>, and I'm actively exploring internship opportunities and preparing for the college application process. I'm excited about applying my technical knowledge in real-world settings and learning from industry professionals.
+    </p>
+    <p>
+      I’m always eager to connect with mentors, engineers, and like-minded peers to grow my skills and contribute to meaningful projects.
+    </p>
+
+    <div class="resume">
+      <h2>High School Resume</h2>
+      <ul>
+        <li><strong>GPA:</strong> 4.0 (unweighted)</li>
+        <li><strong>Relevant Coursework:</strong> AP Computer Science, AP Calculus, AP Physics, Engineering Design</li>
+        <li><strong>Clubs & Activities:</strong> Videography, Math Olympiad</li>
+        <li><strong>Projects:</strong> Raspberry Pi Carbot - Self driving, 3D Printed Prosthetics</li>
+        <li><strong>Awards:</strong> 1st Place - Trebuchet - Physics project</li>
+      </ul>
+    </div>
+
+    <div class="gallery">
+      <h2>My 3D Printed Creations</h2>
+      <div class="gallery-grid">
+        <img src="/static/images/3dprints/snake.jpg" alt="Snake">
+        <img src="/static/images/3dprints/finger_prosthetic.jpg" alt="Prosthetic">
+        <img src="/static/images/3dprints/shark.jpg" alt="Shark">
+        <img src="/static/images/3dprints/skink.jpg" alt="Skink">
+        <img src="/static/images/3dprints/watering_system.jpg" alt="Watering system">
+        <img src="/static/images/3dprints/minecraft.jpg" alt="Minecraft">
+        <!-- Add more images as needed -->
+      </div>
+      <h2>Boy Scouts activities</h2>
+      <div class="gallery-grid">
+        <img src="/static/images/boyscouts/snake.jpg" alt="Snake">
+        <img src="/static/images/boyscouts/finger_prosthetic.jpg" alt="Prosthetic">
+        <img src="/static/images/boyscouts/shark.jpg" alt="Shark">
+        <img src="/static/images/boyscouts/skink.jpg" alt="Skink">
+        <img src="/static/images/boyscouts/watering_system.jpg" alt="Watering system">
+        <img src="/static/images/boyscouts/minecraft.jpg" alt="Minecraft">
+        <!-- Add more images as needed -->
+      </div>
+    </div>
+
+    <div class="contact">
+      <p>Let's connect:</p>
+      <ul>
+        <li>Email: <a href="mailto:arjunsuniverse@gmail.com">arjunsuniverse@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">arjunsuniverse</a></li>
+        <li>GitHub: <a href="https://github.com/arjunsuniverse" target="_blank">arjunsuniverse</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Zoomed Image" />
+  </div>
+</body>
+</html>
